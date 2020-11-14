@@ -1,0 +1,13 @@
+{
+  "name": "Permanent Seeder",
+  "description": "The super seeder for hyperdrives.",
+  "url": "product.geutstudio.com",
+  "npm_name": "@geut/permanent-seeder",
+  "github_url": "https://github.com/geut/permanent-seeder/",
+  "authors": {
+    "GEUT": {
+      "name": "GEUT",
+      "twitter": "@geutstudio"
+    }
+  }
+}
