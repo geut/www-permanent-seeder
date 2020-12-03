@@ -14,7 +14,7 @@
     "@mapbox/rehype-prism": "^0.5.0",
     "elems": "^1.0.0-beta.15",
     "next": "^10.0.0",
-    "nextein": "^3.0.0-beta.26",
+    "nextein": "^3.0.0-beta.27",
     "prismjs": "^1.16.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
