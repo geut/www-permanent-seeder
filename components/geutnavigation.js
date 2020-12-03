@@ -1,13 +1,20 @@
 import React from 'react'
 
 import GEUTLogo from './geutlogo'
+import PermanentSeederColorIcon from './icons/permanent-seeder-color'
 import Link from 'nextein/link'
 
 const Navigation = ({ top = true, ...props }) => (
   <nav role='navigation' {...props}>
     <ul>
       <li className='productLogo'>
-        <a href='/'>YOUR LOGO</a>
+        <a href='/'>
+          <PermanentSeederColorIcon
+            width='80'
+            alt='Permanent Seeder'
+            stroke={'#ddd'}
+          />
+        </a>
       </li>
 
       <li className='about'>
@@ -38,15 +45,20 @@ const Navigation = ({ top = true, ...props }) => (
         right: 0;
         width: 100vw;
         height: calc(var(--spacing) * 14);
+        display: flex;
+        background-color: var(--grey50);
       }
 
       nav ul {
-        background-color: var(--grey50);
-        padding: calc(var(--spacing) * 4) 0;
+        padding: 0;
+        margin: calc(var(--spacing) * 4) 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        max-width: 72em;
+        width: 100%;
+        margin: 0 auto;
       }
 
       nav li {
@@ -71,11 +83,16 @@ const Navigation = ({ top = true, ...props }) => (
         justify-content: space-between;
         align-items: flex-end;
         flex: 6 0 auto;
-        padding-left: calc(var(--spacing) * 4);
+        padding-left: calc(var(--spacing) * 8);
+      }
+
+      .productLogo :global(svg > g > ellipse) {
+        fill: var(--geut-purple);
+        stroke: var(--geut-purple);
       }
 
       nav li.logo {
-        padding-right: calc(var(--spacing) * 4);
+        padding-right: calc(var(--spacing) * 8);
       }
 
       @media screen and (max-width: 680px) {

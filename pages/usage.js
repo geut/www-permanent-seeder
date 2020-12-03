@@ -44,6 +44,7 @@ export default withPost(({ post }) => {
             justify-content: flex-start;
             align-items: stretch;
           }
+
           article header {
             display: flex;
             flex-direction: column;
@@ -52,7 +53,8 @@ export default withPost(({ post }) => {
             flex-basis: auto;
             justify-content: space-between;
             align-items: baseline;
-            margin: calc(var(--spacing) * 10) 0;
+            margin-top: calc(var(--spacing) * 16);
+            margin-bottom: calc(var(--spacing) * 10);
           }
 
           article header .category {
@@ -78,11 +80,14 @@ export default withPost(({ post }) => {
           .container {
             --main-contrast-color: var(--grey500);
             background-color: var(--grey100);
+            padding: 0 calc(var(--spacing) * 4);
           }
 
           .container > * {
             margin: 0 auto;
             max-width: 72em;
+
+            padding: 0 calc(var(--spacing) * 4);
           }
 
           .columns {
@@ -101,6 +106,18 @@ export default withPost(({ post }) => {
 
           .innerContent :global(p) {
             color: var(--grey600);
+          }
+
+          @media screen and (max-width: 680px) {
+            .container {
+              padding: 0;
+            }
+
+            .container > * {
+              margin: 0 auto;
+              max-width: 72em;
+              padding: 0;
+            }
           }
         `}</style>
       </div>

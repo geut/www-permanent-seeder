@@ -27,8 +27,13 @@ export default class Intro extends Component {
           <Paragraph>Easily store and share all your hyperdrives.</Paragraph>
 
           <div className='rows examples'>
-            {snippets.map(cmd => (
-              <Window type='zsh' cmd={cmd} className={`window example`} />
+            {snippets.map((cmd, idx) => (
+              <Window
+                key={`snippet_${idx}`}
+                type='zsh'
+                cmd={cmd}
+                className={'window example'}
+              />
             ))}
           </div>
 

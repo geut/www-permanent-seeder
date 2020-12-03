@@ -7,10 +7,10 @@ export default function Libscie ({ alt, ...props }) {
       viewBox='0 0 444 512'
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'
-      fill-rule='evenodd'
-      clip-rule='evenodd'
-      stroke-linejoin='round'
-      stroke-miterlimit='2'
+      fillRule='evenodd'
+      clipRule='evenodd'
+      strokeLinejoin='round'
+      strokeMiterlimit='2'
     >
       {alt && <title>{alt}</title>}
       <g transform='matrix(1,0,0,1,-178.297,-44)'>

@@ -4,7 +4,7 @@
   "url": "product.geutstudio.com",
   "npm": "https://www.npmjs.com/package/@geut/permanent-seeder",
   "npmName": "@geut/permanent-seeder",
-  "github_url": "https://github.com/geut/permanent-seeder/",
+  "github": "https://github.com/geut/permanent-seeder/",
   "authors": {
     "GEUT": {
       "name": "GEUT",
