@@ -68,6 +68,13 @@ export default class Footer extends Component {
             font-weight: bold;
           }
 
+          .brand > :global(svg g ellipse),
+          .brand > :global(svg g polygon),
+          .brand > :global(svg g line),
+          .brand > :global(svg g polyline) {
+            stroke: var(--grey500);
+          }
+
           .copyright {
             font-size: 0.9em;
             line-height: 2em;
@@ -82,6 +89,7 @@ export default class Footer extends Component {
             padding: calc(var(--spacing) * 3);
             font-size: 0.85em;
             text-align: center;
+            color: var(--grey500);
           }
 
           .built span {
