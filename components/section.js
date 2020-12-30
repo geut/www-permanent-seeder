@@ -15,7 +15,7 @@ export default class Section extends Component {
         <style jsx>{`
           .container {
             margin-top: calc(var(--spacing) * 2);
-            padding: 0 calc(var(--spacing) * 4);
+            padding: 0 calc(var(--spacing) * 8);
           }
 
           .separator {
@@ -26,10 +26,17 @@ export default class Section extends Component {
           }
 
           .title :global(h2) {
-            font-family: var(--font-family-geut);
+            font-family: var(--font-family-montserrat);
             font-weight: lighter;
             margin: calc(var(--spacing) * 4) 0;
             color: var(--secondary-color);
+          }
+
+          @media screen and (max-width: 680px) {
+            .container {
+              margin-top: calc(var(--spacing) * 2);
+              padding: 0 calc(var(--spacing) * 4);
+            }
           }
         `}</style>
       </div>

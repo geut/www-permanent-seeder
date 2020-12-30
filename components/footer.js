@@ -5,13 +5,11 @@ import { Anchor } from 'elems'
 
 import Github from './icons/github'
 import Npm from './icons/npm'
-import Twitter from './icons/twitter'
 import PermanentSeeder from './icons/permanent-seeder'
 
 export default class Footer extends Component {
   render () {
-    const { children, gutter = false, npmName, githubUrl } = this.props
-    const npmUrl = `https://www.npmjs.com/package/${npmName}`
+    const { children, gutter = false, npm, github } = this.props
 
     return (
       <footer className='columns'>
@@ -26,19 +24,14 @@ export default class Footer extends Component {
             </div>
           </div>
           <div className='social rows'>
-            <Link href={githubUrl}>
+            <Link href={github}>
               <a target='_blank' rel='noopener noreferrer'>
                 <Github width='19' alt='GitHub' />
               </a>
             </Link>
-            <Link href={npmUrl}>
+            <Link href={npm}>
               <a target='_blank' rel='noopener noreferrer'>
                 <Npm width='35' style={{ marginTop: '5px' }} alt='npm' />
-              </a>
-            </Link>
-            <Link href='https://twitter.com/geutstudio'>
-              <a target='_blank' rel='noopener noreferrer'>
-                <Twitter width='19' alt='Twitter' />
               </a>
             </Link>
           </div>
@@ -51,15 +44,15 @@ export default class Footer extends Component {
         </div>
         <style jsx>{`
           footer {
-            ${gutter ? `padding: 0 calc(var(--spacing) * 4);` : ''}
+            ${gutter ? 'padding: 0 calc(var(--spacing) * 8);' : ''}
             padding-top: calc(var(--spacing) * 6);
             min-height: 30vh;
-            color: var(--grey400);
+            color: var(--grey500);
             justify-content: flex-end;
           }
 
           footer :global(svg) {
-            fill: var(--grey400);
+            fill: var(--grey500);
             margin: 0 var(--spacing);
           }
 
@@ -73,6 +66,13 @@ export default class Footer extends Component {
             margin-left: -5px;
             font-size: 1.5em;
             font-weight: bold;
+          }
+
+          .brand > :global(svg g ellipse),
+          .brand > :global(svg g polygon),
+          .brand > :global(svg g line),
+          .brand > :global(svg g polyline) {
+            stroke: var(--grey500);
           }
 
           .copyright {
@@ -89,6 +89,7 @@ export default class Footer extends Component {
             padding: calc(var(--spacing) * 3);
             font-size: 0.85em;
             text-align: center;
+            color: var(--grey500);
           }
 
           .built span {

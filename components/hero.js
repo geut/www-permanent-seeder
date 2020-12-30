@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import Link from 'nextein/link'
 import { Paragraph } from 'elems'
 
+import Github from './icons/github'
+import Npm from './icons/npm'
 import { Button } from './button'
 import Window from './windows/window'
 
 export default class Header extends Component {
   render () {
-    const { title, npmName, description, githubUrl } = this.props
+    const { title, npmName, description, github, npm } = this.props
 
     const cmd = `npm install -g ${npmName}`
 
@@ -16,6 +18,7 @@ export default class Header extends Component {
         <div className='title row'>
           <h1>{title}</h1>
           <Paragraph>{description}</Paragraph>
+
           <div className='actions rows'>
             <Link href='/usage'>
               <Button variant='highlight'>
@@ -24,12 +27,25 @@ export default class Header extends Component {
                 </a>
               </Button>
             </Link>
-            <Link href={githubUrl}>
+            <Link href={github}>
               <Button raised>
                 <a>
                   <b>Code</b>
                 </a>
               </Button>
+            </Link>
+          </div>
+
+          <div className='productIcons rows'>
+            <Link href={github}>
+              <a target='_blank' rel='noopener noreferrer'>
+                <Github width='24' alt='GitHub' />
+              </a>
+            </Link>
+            <Link href={npm}>
+              <a target='_blank' rel='noopener noreferrer'>
+                <Npm width='40' style={{ marginTop: '5px' }} alt='npm' />
+              </a>
             </Link>
           </div>
         </div>
@@ -38,6 +54,7 @@ export default class Header extends Component {
         </div>
         <style jsx>{`
           .container {
+            padding-top: calc(var(--spacing) * 18);
             min-height: 90vh;
           }
 
@@ -59,7 +76,7 @@ export default class Header extends Component {
           }
 
           h1:first-child {
-            font-weight: 600;
+            font-weight: 200;
             color: var(--secondary-color);
             letter-spacing: -0.031em;
             margin: 0;
@@ -69,7 +86,7 @@ export default class Header extends Component {
             font-family: var(--font-family-geut);
             font-weight: 600;
             font-size: 6em;
-            color: var(--grey50);
+            color: var(--grey500);
             margin: 0;
             margin-top: calc(var(--spacing) * -3);
           }
@@ -80,7 +97,7 @@ export default class Header extends Component {
           }
 
           .title :global(p) {
-            --main-color: var(--grey200);
+            --main-color: var(--grey600);
             margin-top: calc(var(--spacing) * 10);
             font-weight: 200;
           }
@@ -94,6 +111,16 @@ export default class Header extends Component {
             --button-color: var(--grey900);
             margin: 0 calc(var(--spacing) * 1);
             width: 150px;
+          }
+
+          .productIcons {
+            align-items: center;
+            min-height: 10vh;
+          }
+
+          .productIcons :global(svg) {
+            fill: var(--grey500);
+            margin: 0 var(--spacing);
           }
 
           .terminal {

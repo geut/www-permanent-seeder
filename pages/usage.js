@@ -4,14 +4,11 @@ import withPost, { Content } from 'nextein/post'
 import { Heading1 } from 'elems'
 import renderers from 'elems/renderers'
 
-import Navigation from '../components/navigation'
+import GEUTNavigation from '../components/geutnavigation'
 import Meta from '../components/meta'
-import {
-  name,
-  npm_name as npmName,
-  github_url as githubUrl
-} from '../site.json'
+import { name, npm, github } from '../site.json'
 import Footer from '../components/footer'
+import GEUTFooter from '../components/geutfooter'
 
 export default withPost(({ post }) => {
   const headTitle = `${name} | Usage | ${post.data.title}`
@@ -21,7 +18,7 @@ export default withPost(({ post }) => {
       <Meta title={headTitle} />
       <div className='container'>
         <header className='noMargin'>
-          <Navigation githubUrl={githubUrl} npmName={npmName} />
+          <GEUTNavigation />
         </header>
         <div className='main rows'>
           <article>
@@ -33,7 +30,8 @@ export default withPost(({ post }) => {
             <section className='innerContent'>
               <Content {...post} renderers={renderers} />
             </section>
-            <Footer githubUrl={githubUrl} npmName={npmName} />
+            <Footer github={github} npm={npm} />
+            <GEUTFooter gutter className='geutFooter' />
           </article>
         </div>
         <style jsx>{`
@@ -46,6 +44,7 @@ export default withPost(({ post }) => {
             justify-content: flex-start;
             align-items: stretch;
           }
+
           article header {
             display: flex;
             flex-direction: column;
@@ -54,7 +53,8 @@ export default withPost(({ post }) => {
             flex-basis: auto;
             justify-content: space-between;
             align-items: baseline;
-            margin: calc(var(--spacing) * 10) 0;
+            margin-top: calc(var(--spacing) * 16);
+            margin-bottom: calc(var(--spacing) * 10);
           }
 
           article header .category {
@@ -68,6 +68,7 @@ export default withPost(({ post }) => {
 
           header :global(h1) {
             font-family: var(--font-family-geut);
+            font-weight: 200;
             color: var(--secondary-color);
           }
 
@@ -77,17 +78,16 @@ export default withPost(({ post }) => {
           }
 
           .container {
-            --main-contrast-color: var(--geut-main-color);
-            background: radial-gradient(
-              ellipse at 50% 0%,
-              var(--geut-purple),
-              var(--geut-purple-dark)
-            );
+            --main-contrast-color: var(--grey500);
+            background-color: var(--grey100);
+            padding: 0 calc(var(--spacing) * 4);
           }
 
           .container > * {
             margin: 0 auto;
             max-width: 72em;
+
+            padding: 0 calc(var(--spacing) * 4);
           }
 
           .columns {
@@ -101,11 +101,23 @@ export default withPost(({ post }) => {
           }
 
           .innerContent :global(h2) {
-            color: var(--grey200);
+            color: var(--grey700);
           }
 
           .innerContent :global(p) {
-            color: var(--grey100);
+            color: var(--grey600);
+          }
+
+          @media screen and (max-width: 680px) {
+            .container {
+              padding: 0;
+            }
+
+            .container > * {
+              margin: 0 auto;
+              max-width: 72em;
+              padding: 0;
+            }
           }
         `}</style>
       </div>

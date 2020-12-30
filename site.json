@@ -2,12 +2,19 @@
   "name": "Permanent Seeder",
   "description": "The super seeder for hyperdrives.",
   "url": "product.geutstudio.com",
-  "npm_name": "@geut/permanent-seeder",
-  "github_url": "https://github.com/geut/permanent-seeder/",
+  "npm": "https://www.npmjs.com/package/@geut/permanent-seeder",
+  "npmName": "@geut/permanent-seeder",
+  "github": "https://github.com/geut/permanent-seeder/",
   "authors": {
     "GEUT": {
       "name": "GEUT",
       "twitter": "@geutstudio"
     }
+  },
+  "geut": {
+    "legal": "GEUT SAS",
+    "mail": "contact@geutstudio.com",
+    "github": "https://github.com/geut/",
+    "twitter": "https://twitter.com/geutstudio"
   }
 }
